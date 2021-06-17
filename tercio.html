@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Punto fijo</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+
+
+  <body>
+<div>
+
+      <!-- Menu de paginas -->
+      <div class="menu_paginas">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="index.html" style="text-decoration:none" title="index">Inicio</a></li>       
+          <li><a href="octavos.html" style="text-decoration:none" title="octavos">Siguiente metodo</a></li>
+        </ul>
+      </div>
+
+    <!-- titulo -->
+    <div class="titulo">
+    <blockquote>
+    <h1><strong>Regla de Simpson 1/3.</strong></h1>
+    </blockquote>
+    </div>
+    
+    <br>
+
+    <hr>
+  </div>
+
+    <!-- antecedentes -->
+
+    <div class="sub_titulos">
+  <h2>  <strong>Antecedentes del metodo. </strong> </em> </h2>
+  </div>  
+  <div class="parrafos">
+  <p >
+    El método de integración de Simpson, parte de aproximar a una función por el
+polinomio interpolante de Lagrange, de grado dos. Ahora deduciremos las expresiones para
+este método de integración, para ello escribimos el polinomio de interpolante de Lagrange
+que pasa por tres puntos de una función f(x), cuyas abscisas son equidistantes (x0, y0), (x1,
+y1), (x2, y2), como se muestra en la siguiente grafica.<br><br>
+ <table>
+    <tr>
+        <td>
+           <img style="margin-left: 400px;" src="imagenes/ter1.JPG" alt="graf1" width="400px" >
+        </td>
+    </tr>
+  </table>
+  </p>
+  </div>
+    <!-- aplicación -->
+
+    <div class="parrafos">
+
+    <div class="sub_titulos">
+  <h2>  <strong>Descriviendo el metodo y su aplicación. </strong> </em> </h2>
+    </div>
+
+<table>
+    <p>  Sabemos que: <br><br>
+    F(X) = P2(X)+ε(X)         ->         (1)
+    <br><br>
+    Donde P2(x) es el polinomio interpolante de Lagrange que pasa por los tres puntos,
+sabemos que el polinomio esta dado por: 
+    </p>
+    <table>
+        <tr>
+            <td>
+               <img src="imagenes/ter2.JPG" alt="graf1" width="1000px" >
+               <img src="imagenes/ter3.JPG" alt="graf1" width="1000px" >
+            </td>
+        </tr>
+      </table>
+      <p>
+        La integral del lado derecho podemos resolverla como dos integrales independientes, por lo
+        que empezaremos con:     
+      </p>
+      <table>
+        <tr>
+            <td>
+               <img src="imagenes/ter4.JPG" alt="graf1" width="1000px" >
+            </td>
+        </tr>
+      </table>
+      <p>
+        Pero recordemos que los puntos son equidistantes, es decir x2 - x1 = x1 - x0 igualando esta
+        diferencia a h, la primera integral en (6) se reduce a: 
+      </p>
+      <table>
+        <tr>
+            <td>
+               <img src="imagenes/ter5.JPG" alt="graf1" width="1000px" >
+            </td>
+        </tr>
+      </table>
+      <p>
+        sea u = (x - x1) y dv = (x - x2) dx
+      </p>
+      <table>
+        <tr>
+            <td>
+               <img src="imagenes/ter6.JPG" alt="graf1" width="1000px" >
+            </td>
+        </tr>
+      </table>
+      <p>
+        evaluando en los límites de integración: 
+      </p>
+      <table>
+        <tr>
+            <td>
+               <img src="imagenes/ter7.JPG" alt="graf1" width="1000px" >
+               <img src="imagenes/ter8.JPG" alt="graf1" width="1000px" >
+               <img src="imagenes/ter9.JPG" alt="graf1" width="1000px" >
+            </td>
+        </tr>
+      </table>
+      <p>
+        Ahora resolvemos de igual manera la segunda integral de la ecuación (6)
+      </p>
+      <table>
+        <tr>
+            <td>
+               <img src="imagenes/ter10.JPG" alt="graf1" width="1000px" >
+               <img src="imagenes/ter11.JPG" alt="graf1" width="1000px" >
+               <img src="imagenes/ter12.JPG" alt="graf1" width="1000px" >
+            </td>
+        </tr>
+      </table>
+      <p>
+        Si ahora consideramos cinco puntos de la misma función equidistantes (x0, y0), (x1,
+        y1), (x2, y2), equidistantes (x3, y3), (x4, y4), cuyas ordenadas equidistan, como se muestra en
+        la grafica siguiente. 
+        
+      </p>
+      <table>
+        <tr>
+            <td>
+               <img style="margin-left: 400px;" src="imagenes/ter13.JPG" alt="graf1" width="400px" >
+            </td>
+        </tr>
+      </table>
+      <p>
+        Ahora calculamos la integral desde x0 hasta x4, para ello utilizamos la expresión (14)
+        pero la aplicamos primero de x0 a x2 y después desde x2 hasta x5. 
+      </p>
+      <table>
+        <tr>
+            <td>
+               <img  src="imagenes/ter14.JPG" alt="graf1" width="750px" >
+            </td>
+        </tr>
+      </table>
+      <p>
+        el signo ≈ es usado por que aun no consideramos el valor del error. Como las cinco abscisas
+        son equidistantes h es la misma para cada término del lado derecho, podemos agrupar de la
+        siguiente forma. 
+      </p>
+      <table>
+        <tr>
+            <td>
+               <img  src="imagenes/ter15.JPG" alt="graf1" width="750px" >
+            </td>
+        </tr>
+      </table>
+      <p>
+        Ahora podemos aplicar repetidas veces la expresión (14) para obtener la integral de una
+        función, siempre que el número de puntos sea impar, notemos que los extremos se suman
+        una sola vez, mientras que las ordenadas con índice par se suman dos veces y las ordenadas  <br><br>
+        de índice impar se suman cuatro veces, así que para 2n + 1 puntos el valor de la integral se
+obtiene como sigue: 
+      </p>
+      <table>
+        <tr>
+            <td>
+               <img  src="imagenes/ter16.JPG" alt="graf1" width="750px" >
+            </td>
+        </tr>
+      </table>
+
+
+</table>
+</div>
+
+<div class="descarga_algoritmo">
+  <hr>
+<p>
+  Aquí puedes descargar el Código, el cual fue desarrollado en el lenguaje de Python, si tu computadora no tiene descargado algún compilador compatible con el lenguaje puedes ir a nuestra sección de como descargar el compilador que recomendamos para su uso. 
+  <br><br>
+
+  Presiona el link para descargar el algoritmo. 
+
+
+  <a href="https://drive.google.com/file/d/1n9zODJpKRtHwomgJUdOVi9lCm48eMCR_/view?usp=sharing"   title="punto-fijo"> *** Regla de Simpson 1/3. ***</a>
+</p>
+
+<div class="menu_paginas2">
+  <a href="octavos.html" style="text-decoration:none" title="octavos">Siguiente metodo</a>
+</div>
+
+</div>
+<br><br>
+
+<footer class="footer">
+  <strong> Trabajo realizado por Martinez Ramos Javier</strong>
+ </footer>
+  </body>
+</html>

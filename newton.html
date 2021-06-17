@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Newton</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+
+
+  <body>
+<div>
+
+      <!-- Menu de paginas -->
+      <div class="menu_paginas">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="index.html" style="text-decoration:none" title="index">Inicio</a></li>       
+          <li><a href="lagrange.html" style="text-decoration:none" title="lagrange">Siguiente metodo</a></li>
+        </ul>
+      </div>
+
+    <!-- titulo -->
+    <div class="titulo">
+    <blockquote>
+    <h1><strong>El método de Newton.</strong></h1>
+    </blockquote>
+    </div>
+    
+    <br>
+
+    <hr>
+  </div>
+
+    <!-- antecedentes -->
+
+    <div class="sub_titulos">
+  <h2>  <strong>Sistemas de Ecuaciones no Lineales. </strong> </em> </h2>
+  </div>  
+  <div class="parrafos">
+  <p >
+    Sea f : R
+    n → R
+    n una función de varias variables, no-lineal. <br> Se quiere resolver el sistema de ecuaciones
+    f(x) = 0, donde x = (x1, . . . , xn)
+    t ∈ R
+    n
+    representa al vector de incógnitas..<br><br>
+  </p>
+  </div>
+    <!-- aplicación -->
+
+    <div class="parrafos">
+
+    <div class="sub_titulos">
+  <h2>  <strong>Descriviendo el metodo y su aplicación. </strong> </em> </h2>
+    </div>
+
+<table>
+
+  <p>  Una de las ventajas del método de Newton–Raphson además de su velocidad de convergencia, es que
+    se puede generalizar fácilmente a sistemas de ecuaciones no lineales. Esta generalización se conoce como
+    método de Newton. <br> <br>
+
+    Supongamos que <br> α = (α1, . . . , αn)^t ∈ R^n
+     es la solución del sistema de ecuaciones, y que f = (f1, . . . , fn)^t
+es dos veces diferenciable.  <br>
+Entonces, aplicando el desarrollo de Taylor para funciones de
+varias variables de f en torno a una aproximación de la raíz <br> x^(k) = (x1^(k), . . . , xn^(k))^t
+, se tiene que: <br><br>
+
+0 = f(α) = f(x^(k)) + Df(x^(k)) (α − x^(k)) + O(∥α − x^(k)∥2), <br><br>
+
+donde Df(x^(k)) es la matriz Jacobiana de f en x^(k): <br><br>
+
+
+   </p>
+<table>
+<tr>
+<td>
+   <img src="imagenes/mat1.JPG" alt="graf1" width="400px">
+  </td>
+</tr>
+</table>
+
+<p>
+  Notamos que cuando ∥α − x^(k)∥ es pequeño, el término O(∥α − x^(k)∥^2) <br>
+es mucho más pequeño aún y puede despreciarse en el desarrollo de Taylor anterior: <br><br>
+
+0 = f(x^(k)) + Df(x^(k)) (α − x^(k)) + O(∥α − x^(k)∥^2) <br><br>
+≈ f(x^(k)) + Df(x^(k)) (α − x^(k)). <br><br>
+
+Si además la matriz Df(x^(k)) es invertible, entonces podemos aproximar la raíz α despejándola en
+la ecuación anterior: <br><br>
+
+α ≈ x^(k) − Df(x^(k))^−1*f(x^(k)). <br><br>
+
+El método de Newton consiste en, dada la aproximación de la solución x^(k), tomar como nueva
+aproximación x^(k+1) el valor de la expresión anterior: <br><br>
+
+x^(k+1) := x^(k) − Df(x^(k))^−1 * f(x^(k)), k = 0, 1, 2, . . . <br><br>
+
+donde x^(0) es la aproximación inicial.
+<br><br>
+
+En la práctica no es necesario (ni conveniente) invertir la matriz Df(x^(k)), <br> sino que se utiliza un método menos costoso: resolver en cada iteración el sistema de ecuaciones lineales siguiente:
+<br><br>
+
+Df(x^(k)) (x^(k+1) − x^(k)) = −f(x^(k)). <br><br>
+
+Así, llamando δx^(k):= x^(k+1) − x^(k), se obtiene el siguiente algoritmo:
+<br><br>
+
+<table>
+  <tr>
+  <td>
+     <img src="imagenes/mat2.JPG" alt="graf1" width="500px">
+    </td>
+  </tr>
+  </table>
+  <br><br>
+
+  <p>
+   <strong> Observaciones. </strong> <br><br>
+1. Los teoremas de convergencia, y estimación del error del método de Newton–Raphson se pueden
+generalizar al caso de sistemas, reemplazando el valor absoluto por una norma vectorial. Así se
+obtiene que <br><br>
+
+∥α − x^(k+1)∥ ≤ C∥α − x^(k)∥^2, k = 0, 1, 2, . . .
+<br><br>
+
+donde C es una constante positiva que depende de las derivadas primeras y segundas de f. <br>
+
+2. Al igual que en el método de Newton–Raphson, si se desea calcular la solución α del sistema con
+error menor que tol, puede usarse <br><br>
+
+∥x^(k+1) − x^(k)∥ ≤ tol
+<br><br>
+
+como criterio de detención. <br>
+
+Ejemplo: Resolver el siguiente sistema de ecuaciones con error menor que tol = 10−5:
+
+<br><br>
+
+<table>
+  <tr>
+  <td>
+     <img src="imagenes/mat3.JPG" alt="graf1" width="200px">
+    </td>
+  </tr>
+  </table>
+  <br><br>
+
+   <p> Solución: Las funciones a utilizar son:</p>
+  <br><br>
+  <table>
+    <tr>
+    <td>
+       <img src="imagenes/mat4.JPG" alt="graf1" width="300px">
+      </td>
+    </tr>
+    </table>
+    <br><br>
+
+    <p>
+      Localización de las raíces: <br><br>
+
+Algoritmo:
+
+    </p>
+
+    <table>
+      <tr>
+      <td>
+         <img src="imagenes/mat5.JPG" alt="graf1" width="400px">
+        </td>
+      </tr>
+      </table>
+      <br>
+      <table>
+        <tr>
+        <td>
+           <img src="imagenes/mat6.JPG" alt="graf1" width="500px">
+          </td>
+        </tr>
+        </table>
+        <br>
+        <br>
+        <table>
+          <tr>
+          <td>
+             <img src="imagenes/mat7.JPG" alt="graf1" width="500px">
+            </td>
+          </tr>
+          </table>
+
+
+  </p>
+
+
+
+
+</p>
+
+
+
+</table>
+
+</div>
+
+<div class="descarga_algoritmo">
+  <hr>
+<p>
+  Aquí puedes descargar el Código, el cual fue desarrollado en el lenguaje de Python, si tu computadora no tiene descargado algún compilador compatible con el lenguaje puedes ir a nuestra sección de como descargar el compilador que recomendamos para su uso. 
+  <br><br>
+
+  Presiona el link para descargar el algoritmo. 
+
+
+  <a href="https://drive.google.com/file/d/1pWDOTMCKb6gsEyI0RFJi9dUwO9z16sCc/view?usp=sharing"   title="punto-fijo"> *** El método de Newton ***</a>
+</p>
+
+<div class="menu_paginas2">
+  <a href="lagrange.html" style="text-decoration:none" title="lagrange">Siguiente metodo</a>
+</div>
+</div>
+<br><br>
+
+<footer class="footer">
+  <strong> Trabajo realizado por Martinez Ramos Javier</strong>
+ </footer>
+
+  </body>
+</html>

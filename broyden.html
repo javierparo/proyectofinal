@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Punto fijo</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+
+
+  <body>
+<div>
+
+      <!-- Menu de paginas -->
+      <div class="menu_paginas">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="index.html" style="text-decoration:none" title="index">Inicio</a></li>       
+          <li><a href="tercio.html" style="text-decoration:none" title="tercio">Siguiente metodo</a></li>
+        </ul>
+      </div>
+
+    <!-- titulo -->
+    <div class="titulo">
+    <blockquote>
+    <h1><strong>Método de Broyden</strong></h1>
+    </blockquote>
+    </div>
+    
+    <br>
+
+    <hr>
+  </div>
+
+    <!-- antecedentes -->
+
+    <div class="sub_titulos">
+  <h2>  <strong>Antecedentes del metodo. </strong> </em> </h2>
+  </div>  
+  <div class="parrafos">
+  <p >
+    En análisis numérico, el método de Broyden es un método cuasinewtoniano para la solución numérica de sistemas ecuaciones no lineales con más de una variable. Fue descrito originalmente por C. G. Broyden en 1965.[1]​ <br><br>
+
+Para hallar la solución del sistema de ecuaciones  Fi(X1, X2,...,Xn)=0, i = 1,2,...,n,  el método de Newton emplea el jacobiano  en cada iteración, además de calcular su inversa. Sin embargo, computar ese jacobiano es una operación difícil y costosa. La idea que subyace en el método de Broyden consiste en computar el jacobiano entero solamente en la primera iteración, y llevar a cabo una actualización de rango 1 en las demás iteraciones.
+    <br><br>
+    Fi(X1, X2,...,Xn)  se supone continua y diferenciable en un conjunto abierto en  R^n con derivadas parciales continuas en ese abierto. <br>
+    En 1979, Gay demostró que, cuando se aplica el método de Broyden a un sistema lineal, se requieren 2n pasos.
+  </p>
+  </div>
+    <!-- aplicación -->
+
+    <div class="parrafos">
+
+    <div class="sub_titulos">
+  <h2>  <strong>Descriviendo el metodo y su aplicación. </strong> </em> </h2>
+    </div>
+
+<table>
+
+  <p>  El método de Broyden considera el método de la secante y establece una generalización de él para el espacio multidimensional.
+
+    El método de la secante sustituye la primera derivada F´(Xn) aproximación de diferencia finita
+    <br>
+    
+   </p>
+
+<tr>
+
+<td>
+   <img src="imagenes/ecua1.JPG" alt="graf1" width="300px">
+  </td>
+
+</tr>
+
+
+
+</table>
+<p>
+    y procede según el método de Newton:
+</p>
+
+<table>
+    <tr>
+
+        <td>
+           <img src="imagenes/ecua2.JPG" alt="graf1" width="380px">
+          </td>
+        
+        </tr>
+        
+</table>
+<p>
+    Broyden establece una generalización de esa fórmula para un sistema de ecuaciones mediante una sustitución de 
+   1 / F´(Xn)  por la inversa del jacobiano J. Este se determina por medio de la ecuación de la secante (la aproximación de diferencia finita <br>
+</p>
+<table>
+    <tr>
+
+        <td>
+           <img src="imagenes/ecua3.JPG" alt="graf1" width="480px">
+          </td>
+        
+        </tr>
+        
+</table>
+<p>
+    Sin embargo, esta ecuación está infradeterminada por más de una dimensión. <br><br>
+
+    Broyden sugiere un procedimiento que consta de los siguientes 3 pasos: <br><br>
+    
+    1) Emplear la aproximación del jacobiano  Jn-1
+    <br><br>
+
+    2) Tomar la solución de la ecuación de la secante que suponga la modificación mínima de Jn-1(entendiendo por mínima que se dé una minimización de la norma de Frobenius ||Jn-Jn-1||
+</p>
+
+<table>
+    <tr>
+
+        <td>
+           <img src="imagenes/ecua4.JPG" alt="graf1" width="500px">
+          </td>
+        
+        </tr>
+        
+</table>
+<p>
+    3) Continuar según el método de Newton:
+</p>
+<table>
+    <tr>
+        <td>
+           <img src="imagenes/ecua5.JPG" alt="graf1" width="500px">
+         </td>
+    </tr>   
+</table>
+<p>
+    En esa última fórmula,
+</p>
+<table>
+    <tr>
+        <td>
+           <img src="imagenes/ecua6.JPG" alt="graf1" width="1000px">
+         </td>
+    </tr>   
+</table>
+<p>
+    son vectores columna de k elementos en un sistema de k dimensiones.
+</p>
+<table>
+    <tr>
+        <td>
+           <img src="imagenes/ecua7.JPG" alt="graf1" width="1100px">
+         </td>
+    </tr>   
+</table>
+<p>
+    Broyden sugiere también la fórmula de Sherman-Morrison  para actualizar directamente el inverso de la aproximación del jacobiano por la aproximación de diferencia finita:
+</p>
+<table>
+    <tr>
+        <td>
+           <img src="imagenes/ecua8.JPG" alt="graf1" width="650px">
+         </td>
+    </tr>   
+</table>
+<p>
+    Este último se conoce como el « buen método de Broyden. <br><br>
+
+Se puede obtener a partir de él una técnica similar empleando una modificación ligeramente distinta de Jn-1 que minimiza en su lugar 
+</p>
+<table>
+    <tr>
+        <td>
+           <img src="imagenes/ecua9.JPG" alt="graf1" width="300px">
+         </td>
+    </tr>   
+</table>
+<p>
+    Tal sería el llamado « mal método de Broyden:
+</p>
+<table>
+    <tr>
+        <td>
+           <img src="imagenes/ecua10.JPG" alt="graf1" width="500px">
+         </td>
+    </tr>   
+</table>
+
+
+</div>
+
+<div class="descarga_algoritmo">
+  <hr>
+<p>
+  Aquí puedes descargar el Código, el cual fue desarrollado en el lenguaje de Python, si tu computadora no tiene descargado algún compilador compatible con el lenguaje puedes ir a nuestra sección de como descargar el compilador que recomendamos para su uso. 
+  <br><br>
+
+  Presiona el link para descargar el algoritmo. 
+
+
+  <a href="https://drive.google.com/file/d/1FiiBFjNP5pDnixRXjD71uVoYKTRGXbxW/view?usp=sharing"   title="punto-fijo"> *** Método de Broyden ***</a>
+</p>
+<div class="menu_paginas2">
+  <a href="tercio.html" style="text-decoration:none" title="tercio">Siguiente metodo</a>
+</div>
+
+</div>
+<br><br>
+
+<footer class="footer">
+  <strong> Trabajo realizado por Martinez Ramos Javier</strong>
+ </footer>
+  </body>
+</html>
